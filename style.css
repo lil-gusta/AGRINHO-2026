@@ -1,0 +1,131 @@
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS E VARIÁVEIS
+   ========================================================================== */
+:root {
+    --cor-primaria: #2e7d32; /* Verde escuro (Agro/Sustentabilidade) */
+    --cor-secundaria: #81c784; /* Verde claro */
+    --cor-destaque: #f57c00; /* Laranja terra (para botões ou detalhes) */
+    --cor-fundo: #fafafa; /* Cinza bem claro para o fundo */
+    --cor-texto: #333333; /* Cinza escuro para melhor leitura */
+    --cor-branca: #ffffff;
+    --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Rolagem suave ao clicar no menu */
+}
+
+body {
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. CABEÇALHO E MENU DE NAVEGAÇÃO
+   ========================================================================== */
+header {
+    background-color: var(--cor-branca);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+}
+
+/* Logo / Nome da marca */
+header > p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--cor-primaria);
+    letter-spacing: 1px;
+}
+
+/* Lista do Menu */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+/* Links do Menu */
+nav ul li a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--cor-primaria);
+}
+
+/* ==========================================================================
+   3. PÁGINA INICIAL / BANNER (#home)
+   ========================================================================== */
+#home {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), 
+                url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=2070') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    color: var(--cor-branca);
+    margin-top: 0; /* Começa por baixo do header fixo */
+}
+
+#home h1 {
+    font-size: 3rem;
+    max-width: 800px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#home p {
+    font-size: 1.2.5rem;
+    max-width: 600px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   4. RESPONSIVIDADE (MOBILE)
+   ========================================================================== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    #home h1 {
+        font-size: 2rem;
+    }
+
+    #home p {
+        font-size: 1rem;
+    }
+}
