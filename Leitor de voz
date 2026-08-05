@@ -1,0 +1,51 @@
+// Variável de controle de estado (certifique-se de declará-la no escopo global do seu script)
+let lendo = false;
+
+function lerEmVozAlta() {
+    // Verifica se o navegador suporta a API de fala
+    if (!('speechSynthesis' in window)) {
+        alert("Seu navegador não suporta a leitura em voz alta.");
+        return;
+    }
+
+    // Se já estiver ativo, alterna entre pausar e continuar
+    if (lendo === true) {
+        if (speechSynthesis.paused === true) {
+            speechSynthesis.resume();
+        } else {
+            speechSynthesis.pause();
+        }
+        return;
+    }
+
+    // Captura o conteúdo da tag <main>
+    const conteudo = document.querySelector("main");
+    
+    if (!conteudo) {
+        console.warn("Elemento <main> não encontrado na página.");
+        return;
+    }
+
+    const texto = conteudo.innerText;
+
+    // Cria a instância de fala
+    const fala = new SpeechSynthesisUtterance(texto);
+    fala.lang = "pt-BR";
+    
+    // Evento disparado quando a leitura termina naturalmente
+    fala.onend = function() {
+        finalizarLeitura();
+    };
+
+    // Cancela qualquer fala anterior emandada e inicia a nova
+    speechSynthesis.cancel();
+    speechSynthesis.speak(fala);
+
+    lendo = true;
+}
+
+// Função auxiliar para resetar o estado quando a leitura acabar
+function finalizarLeitura() {
+    lendo = false;
+    console.log("Leitura finalizada.");
+}
