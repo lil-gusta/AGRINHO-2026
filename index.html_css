@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards de Estudo | AGRINHO 2026</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Flashcards de Estudo</h1>
+            <p class="subtitle">AGRINHO 2026 • Aprendizado Interativo</p>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="hero">
+            <div class="container">
+                <img src="assets/imagem1.png" alt="Imagem gerada por IA - Agricultura Sustentável" class="hero-img">
+                <div class="hero-text">
+                    <h2>Estude de forma inteligente</h2>
+                    <p>Use os flashcards abaixo para revisar conteúdos importantes. Clique no cartão para virar e ver a resposta.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="flashcards-section">
+            <div class="container">
+                <div class="controls">
+                    <button id="btn-prev" class="btn">← Anterior</button>
+                    <span id="counter">1 / 8</span>
+                    <button id="btn-next" class="btn">Próximo →</button>
+                </div>
+
+                <div class="flashcard-container">
+                    <div class="flashcard" id="flashcard">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">
+                                <span class="card-label">Pergunta</span>
+                                <p id="card-question">Carregando...</p>
+                            </div>
+                            <div class="flashcard-back">
+                                <span class="card-label">Resposta</span>
+                                <p id="card-answer">Carregando...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button id="btn-flip" class="btn btn-primary">Virar Cartão</button>
+                    <button id="btn-shuffle" class="btn">Embaralhar</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <div class="container">
+                <img src="assets/imagem2.png" alt="Imagem gerada por IA - Estudo e Tecnologia" class="info-img">
+                <div class="info-text">
+                    <h2>Sobre o Projeto</h2>
+                    <p>Este site de flashcards foi desenvolvido com HTML, CSS e JavaScript como parte da atividade AGRINHO 2026. O objetivo é praticar a criação de páginas web modernas, responsivas e interativas.</p>
+                    <ul>
+                        <li>Design moderno e adaptável para celulares</li>
+                        <li>Animações suaves de virada dos cartões</li>
+                        <li>Navegação entre perguntas</li>
+                        <li>Embaralhamento dos flashcards</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 • Projeto AGRINHO • Flashcards de Estudo</p>
+            <p>Desenvolvido com HTML, CSS e JavaScript</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
